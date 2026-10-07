@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Таблица</title>
+    </head>
+    <body>
+
+        <h1>Таблицы</h1>
+
+        <hr>
+
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="company.html">Подробное описание: Apple</a></li>
+            <li><a href="table.html">Табличные данные и графики</a></li>
+        </ul>
+
+        <hr>
+        <form action="table.html" method="get">
+        <details>
+            <summary>График</summary>
+            <fieldset>
+                <legend>Параметры графика</legend>
+                <p>
+                    <label for="abs">Ось абсцисс (X):</label><br>
+                    <input type="radio" id="abs" name="x" value="year"> Год основания<br>
+                    <input type="radio" id="abs" name="x" value="country"> Страна<br>
+                </p>
+                <p>
+                    <label for="ord">Ось ординат (Y):</label><br>
+                    <input type="checkbox" id="ord" name="y" value="max_c_income"> Максимальная прибыль<br>
+                    <input type="checkbox" id="ord" name="y" value="min_c_income"> Минимальная прибыль<br>
+                    <input type="checkbox" id="ord" name="y" value="medium_c_income"> Средняя прибыль<br>
+                </p>
+                <p>
+                    <input type="submit" value="Сформировать">
+                </p>
+                <p>Здесь будет график</p>
+            </fieldset>
+        </details>
+        </form>
+
+        <form action="table.html" method="get">
+        <div>
+            <details>
+                <summary>Фильтр</summary>
+                <p>
+                    <label>Компания: <input type="text" name="company"></label>
+                </p>
+                <p>
+                    <label>Страна: <input type="text" name="country"></label>
+                </p>
+                <p>
+                    Год основания от <input type="number" name="year_from"> до <input type="number" name="year_to">
+                </p>
+                <p>
+                    <label>Сотрудники, тыс. <input type="text" name="employees"></label>
+                </p>
+                <p>
+                <p>
+                    Выручка, млрд $: от <input type="number" name="income_from"> до <input type="number" name="income_to">
+                </p>
+
+                <p>
+                    Прибыль, млрд $: от <input type="number" name="c_income_from"> до <input type="number" name="c_income_to">
+                </p>
+                <p>
+                    <button type="submit">Найти</button>
+                </p>
+            </details>
+        </div>
+        <details>
+            <summary>Сортировка</summary>
+                <p>
+                <label>
+                    Первый уровень: 
+                    <select name="sort_level_1">
+                        <option value="none" selected>Нет</option>
+                        <option value="company">Компания</option>
+                        <option value="country">Страна</option>
+                        <option value="year">Год</option>
+                        <option value="employees">Сотрудники, тыс.</option>
+                        <option value="inconme">Выручка, млрд $</option>
+                        <option value="c_income">Прибыль, млрд $</option>
+                    </select>
+                </label>
+                <label>по убыванию? <input type="checkbox" name="sort_desc_1"></label>
+                </p>
+                <p>
+                <label>
+                    Второй уровень: 
+                    <select name="sort_level_2">
+                        <option value="none" selected>Нет</option>
+                        <option value="company">Компания</option>
+                        <option value="country">Страна</option>
+                        <option value="year">Год</option>
+                        <option value="employees">Сотрудники, тыс.</option>
+                        <option value="inconme">Выручка, млрд $</option>
+                        <option value="c_income">Прибыль, млрд $</option>
+                    </select>
+                </label>
+                <label>по убыванию? <input type="checkbox" name="sort_desc_2"></label>
+                </p>
+                <p>
+                <label>
+                    Третий уровень: 
+                    <select name="sort_level_3">
+                        <option value="none" selected>Нет</option>
+                        <option value="company">Компания</option>
+                        <option value="country">Страна</option>
+                        <option value="year">Год</option>
+                        <option value="employees">Сотрудники, тыс.</option>
+                        <option value="income">Выручка, млрд $</option>
+                        <option value="c_income">Прибыль, млрд $</option>
+                    </select>
+                </label>
+                <label>по убыванию? <input type="checkbox" name="sort_desc_3"></label>
+                </p>
+                <p>
+                    <button type="submit">Сортировать</button>
+                </p>
+            </details>
+        </form>
+
+        <table border="1" cellpadding="6" cellspacing="0">
+            <caption>Крупнейшие IT-корпорации:</caption>
+            <thead>
+                <tr>
+                    <th>Компания</th>
+                    <th>Страна</th>
+                    <th>Год основания</th>
+                    <th>Выручка, млрд $</th>
+                    <th>Прибыль, млрд $</th>
+                    <th>Сотрудники, тыс.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Apple</td><td>США</td><td>1976</td><td>383</td><td>97</td><td>164</td></tr>
+                <tr><td>Microsoft</td><td>США</td><td>1975</td><td>212</td><td>72</td><td>221</td></tr>
+                <tr><td>Alphabet</td><td>США</td><td>1998</td><td>283</td><td>60</td><td>156</td></tr>
+                <tr><td>Amazon</td><td>США</td><td>1994</td><td>514</td><td>30</td><td>1541</td></tr>
+                <tr><td>Meta</td><td>США</td><td>2004</td><td>117</td><td>23</td><td>87</td></tr>
+                <tr><td>Samsung</td><td>Южная Корея</td><td>1938</td><td>234</td><td>15</td><td>270</td></tr>
+                <tr><td>IBM</td><td>США</td><td>1911</td><td>60</td><td>8</td><td>282</td></tr>
+                <tr><td>Intel</td><td>США</td><td>1968</td><td>54</td><td>2</td><td>125</td></tr>
+                <tr><td>Sony</td><td>Япония</td><td>1946</td><td>88</td><td>7</td><td>113</td></tr>
+                <tr><td>Oracle</td><td>США</td><td>1977</td><td>50</td><td>11</td><td>143</td></tr>
+                <tr><td>SAP</td><td>Германия</td><td>1972</td><td>34</td><td>6</td><td>108</td></tr>
+                <tr><td>NVIDIA</td><td>США</td><td>1993</td><td>27</td><td>4</td><td>26</td></tr>
+                <tr><td>Tencent</td><td>Китай</td><td>1998</td><td>86</td><td>16</td><td>105</td></tr>
+                <tr><td>Alibaba</td><td>Китай</td><td>1999</td><td>126</td><td>10</td><td>198</td></tr>
+                <tr><td>Foxconn</td><td>Тайвань</td><td>1974</td><td>217</td><td>5</td><td>826</td></tr>
+                <tr><td>Dell</td><td>США</td><td>1984</td><td>102</td><td>2</td><td>133</td></tr>
+                <tr><td>HP</td><td>США</td><td>1939</td><td>63</td><td>3</td><td>58</td></tr>
+                <tr><td>Accenture</td><td>Ирландия</td><td>1989</td><td>64</td><td>7</td><td>738</td></tr>
+                <tr><td>TCS</td><td>Индия</td><td>1968</td><td>29</td><td>6</td><td>614</td></tr>
+                <tr><td>Infosys</td><td>Индия</td><td>1981</td><td>18</td><td>3</td><td>343</td></tr>
+                <tr><td>Wipro</td><td>Индия</td><td>1945</td><td>11</td><td>2</td><td>250</td></tr>
+                <tr><td>HCL Technologies</td><td>Индия</td><td>1991</td><td>13</td><td>2</td><td>223</td></tr>
+                <tr><td>Capgemini</td><td>Франция</td><td>1967</td><td>22</td><td>2</td><td>340</td></tr>
+                <tr><td>Cognizant</td><td>США</td><td>1994</td><td>19</td><td>2</td><td>347</td></tr>
+                <tr><td>Adobe</td><td>США</td><td>1982</td><td>19</td><td>5</td><td>30</td></tr>
+                <tr><td>Salesforce</td><td>США</td><td>1999</td><td>35</td><td>4</td><td>73</td></tr>
+                <tr><td>Broadcom</td><td>США</td><td>1991</td><td>36</td><td>14</td><td>20</td></tr>
+                <tr><td>Qualcomm</td><td>США</td><td>1985</td><td>44</td><td>10</td><td>50</td></tr>
+                <tr><td>Texas Instruments</td><td>США</td><td>1930</td><td>18</td><td>7</td><td>34</td></tr>
+                <tr><td>AMD</td><td>США</td><td>1969</td><td>23</td><td>1</td><td>26</td></tr>
+                <tr><td>Micron</td><td>США</td><td>1978</td><td>31</td><td>8</td><td>48</td></tr>
+                <tr><td>ASML</td><td>Нидерланды</td><td>1984</td><td>28</td><td>8</td><td>39</td></tr>
+                <tr><td>TSMC</td><td>Тайвань</td><td>1987</td><td>76</td><td>31</td><td>73</td></tr>
+                <tr><td>Nokia</td><td>Финляндия</td><td>1865</td><td>26</td><td>2</td><td>87</td></tr>
+                <tr><td>Ericsson</td><td>Швеция</td><td>1876</td><td>27</td><td>1</td><td>100</td></tr>
+                <tr><td>Xiaomi</td><td>Китай</td><td>2010</td><td>38</td><td>3</td><td>33</td></tr>
+                <tr><td>Huawei</td><td>Китай</td><td>1987</td><td>99</td><td>9</td><td>207</td></tr>
+                <tr><td>JD.com</td><td>Китай</td><td>1998</td><td>153</td><td>3</td><td>450</td></tr>
+                <tr><td>Baidu</td><td>Китай</td><td>2000</td><td>19</td><td>3</td><td>45</td></tr>
+                <tr><td>Netflix</td><td>США</td><td>1997</td><td>34</td><td>5</td><td>13</td></tr>
+                <tr><td>Uber</td><td>США</td><td>2009</td><td>37</td><td>2</td><td>33</td></tr>
+                <tr><td>Booking Holdings</td><td>США</td><td>1996</td><td>21</td><td>4</td><td>23</td></tr>
+                <tr><td>PayPal</td><td>США</td><td>1998</td><td>30</td><td>4</td><td>27</td></tr>
+                <tr><td>Intuit</td><td>США</td><td>1983</td><td>15</td><td>3</td><td>17</td></tr>
+                <tr><td>ServiceNow</td><td>США</td><td>2004</td><td>9</td><td>1</td><td>23</td></tr>
+                <tr><td>VMware</td><td>США</td><td>1998</td><td>13</td><td>1</td><td>38</td></tr>
+                <tr><td>Zoom</td><td>США</td><td>2011</td><td>4</td><td>1</td><td>8</td></tr>
+                <tr><td>Twitter/X</td><td>США</td><td>2006</td><td>5</td><td>1</td><td>2</td></tr>
+                <tr><td>Snap</td><td>США</td><td>2011</td><td>5</td><td>-1</td><td>5</td></tr>
+                <tr><td>Spotify</td><td>Швеция</td><td>2006</td><td>14</td><td>-1</td><td>9</td></tr>
+                <tr><td>Shopify</td><td>Канада</td><td>2006</td><td>7</td><td>-1</td><td>12</td></tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <footer>6 подгруппа Б9124-09.03.04, Сергиенко Никита<br>
+        <a href="index.html">Главная</a> | <a href="company.html">Apple</a> | <a href="table.html">Таблицы</a></footer>
+
+    </body>
+</html>
